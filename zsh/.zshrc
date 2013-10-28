@@ -1,3 +1,17 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/ben/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 # Set up Path
 export PATH=/usr/local/bin                 # Homebrew binaries
 export PATH=/usr/local/sbin:$PATH          # Homebrew system binaries

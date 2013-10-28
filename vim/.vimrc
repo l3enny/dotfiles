@@ -18,3 +18,15 @@ set backspace=indent,eol,start
 
 " Set status line to something more useful
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+
+" Simplify pane-switching
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Set preference for where splits occur
+set splitbelow
+set splitright
+
+
