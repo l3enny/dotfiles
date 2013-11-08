@@ -1,5 +1,10 @@
-" Turn on syntax highlighting
-syntax on
+set nocompatible   " Vim is improved!
+filetype off       " I'm told this is required
+
+" Set up Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
 " Turn on line numbers
 set number
@@ -23,7 +28,7 @@ set textwidth=80
 set backspace=indent,eol,start
 
 " Set status line to something more useful
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " Simplify pane-switching
 nnoremap <C-J> <C-W><C-J>
@@ -35,4 +40,14 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+" Make for seamless transitions between vim and tmux panes
+Bundle 'christoomey/vim-tmux-navigator'
 
+" Neato status bar
+Bundle 'Lokaltog/powerline'
+
+" Syntax
+Bundle 'tpope/vim-git'
+
+" Color
+Bundle 'molokai'

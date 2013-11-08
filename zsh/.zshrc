@@ -12,14 +12,17 @@ zstyle :compinstall filename '/Users/ben/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
 # Set up Path
-export PATH=/usr/local/bin                 # Homebrew binaries
-export PATH=/usr/local/sbin:$PATH          # Homebrew system binaries
-export PATH=$PATH:/usr/bin                 # User binaries come after
-export PATH=$PATH:/bin                     # Binaries
-export PATH=$PATH:/usr/sbin                # User system binaries
-export PATH=$PATH:/sbin                    # System binaries
-export PATH=$PATH:/opt/X11/bin:/usr/texbin # TeX binaries
+if [ `uname` = "Darwin" ]; then
+    export PATH=/usr/local/bin                 # Homebrew binaries
+    export PATH=/usr/local/sbin:$PATH          # Homebrew system binaries
+    export PATH=$PATH:/usr/bin                 # User binaries come after
+    export PATH=$PATH:/bin                     # Binaries
+    export PATH=$PATH:/usr/sbin                # User system binaries
+    export PATH=$PATH:/sbin                    # System binaries
+    export PATH=$PATH:/opt/X11/bin:/usr/texbin # TeX binaries
+fi
 
 # Enable online help for zsh
 unalias run-help
