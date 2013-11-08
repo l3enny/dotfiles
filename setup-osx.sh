@@ -20,3 +20,5 @@ brew install irssi
 brew install gpg
 brew install git
 
+# Install Vundle for Vim
+git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/.vim/bundle/vundle
