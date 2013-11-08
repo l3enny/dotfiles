@@ -1,16 +1,14 @@
-# Lines configured by zsh-newuser-install
+# History file config
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Allow for non-cd directory changing
 setopt autocd
-# End of lines configured by zsh-newuser-install
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/ben/.zshrc'
-
+# Enable auto-completion
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 # Set up Path
 if [ `uname` = "Darwin" ]; then
