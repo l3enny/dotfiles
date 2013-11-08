@@ -3,7 +3,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
-bindkey -v
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
@@ -22,6 +21,9 @@ if [ `uname` = "Darwin" ]; then
     export PATH=$PATH:/usr/sbin                # User system binaries
     export PATH=$PATH:/sbin                    # System binaries
     export PATH=$PATH:/opt/X11/bin:/usr/texbin # TeX binaries
+    alias ls="ls -G"                           # nice colored output
+else
+    alias ls="ls --color=auto"                 # nic colored output
 fi
 
 # Enable online help for zsh
@@ -32,7 +34,6 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 # local tor proxy for ssh
 alias ssh-tor='ssh -o "ProxyCommand nc -X 5 -x 127.0.0.1:9050 %h %p"'
 
-alias ls="ls -G" # nice colored output
 
 # Pip-related settings
 export PIP_REQUIRE_VIRTUALENV=true # only install in virtualenv
