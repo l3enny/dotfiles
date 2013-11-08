@@ -23,3 +23,5 @@ if [ `uname` = "Darwin" ]; then
     # Install Vundle for Vim
     git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/.vim/bundle/vundle
 fi
+
+vim -u ~/.vimrc.bundles +BundleInstall +qa
