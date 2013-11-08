@@ -1,3 +1,5 @@
 [user]
 	email = l3enny@gmail.com
 	name = Ben Yee
+[push]
+	default = simple
