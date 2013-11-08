@@ -10,6 +10,12 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 
+" Make searching more friendly
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
 " Anything more than 80 characters is unwise
 set textwidth=80
 
