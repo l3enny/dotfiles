@@ -1,5 +1,6 @@
 set nocompatible   " Vim is improved!
 filetype off       " I'm told this is required
+syntax enable
 
 " Set up Vundle
 set rtp+=~/.vim/bundle/vundle/
