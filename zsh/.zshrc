@@ -21,7 +21,7 @@ if [ `uname` = "Darwin" ]; then
     export PATH=$PATH:/opt/X11/bin:/usr/texbin # TeX binaries
     alias ls="ls -G"                           # nice colored output
 else
-    alias ls="ls --color=auto"                 # nic colored output
+    alias ls="ls --color=auto"                 # nice colored output
 fi
 
 # Enable online help for zsh
