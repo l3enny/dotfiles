@@ -1,14 +1,27 @@
+# What do you think?
+export EDITOR=vim
+
+# But ZSH's implementation is annoying
+bindkey -e
+
 # History file config
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+setopt HIST_IGNORE_DUPS
 
 # Allow for non-cd directory changing
 setopt autocd
 
+# Enable prompt customization
+autoload -U promptinit
+promptinit
+prompt redhat
+
 # Enable auto-completion
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' menu select
 
 # Set up Path
 if [ `uname` = "Darwin" ]; then
