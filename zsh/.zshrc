@@ -12,8 +12,9 @@ compinit
 
 # Set up Path
 if [ `uname` = "Darwin" ]; then
-    export PATH=/usr/local/bin                 # Homebrew binaries
-    export PATH=/usr/local/sbin:$PATH          # Homebrew system binaries
+    export PATH=$HOME/bin                      # Personal binaries
+    export PATH=$PATH:/usr/local/bin           # Homebrew binaries
+    export PATH=$PATH:/usr/local/sbin          # Homebrew system binaries
     export PATH=$PATH:/usr/bin                 # User binaries come after
     export PATH=$PATH:/bin                     # Binaries
     export PATH=$PATH:/usr/sbin                # User system binaries
