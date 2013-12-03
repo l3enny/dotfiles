@@ -1,5 +1,5 @@
 set nocompatible   " Vim is improved!
-filetype off       " I'm told this is required
+filetype on        " I'm told this is required
 syntax enable
 
 " Set up Vundle
@@ -29,7 +29,7 @@ set textwidth=80
 set backspace=indent,eol,start
 
 " Set status line to something more useful
-" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " Simplify pane-switching
 nnoremap <C-j> <C-w>j
