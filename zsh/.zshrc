@@ -39,9 +39,9 @@ else
 fi
 
 # Enable online help for zsh
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/helpfiles
+#unalias run-help
+#autoload run-help
+#HELPDIR=/usr/local/share/zsh/helpfiles
 
 # local tor proxy for ssh
 alias ssh-tor='ssh -o "ProxyCommand nc -X 5 -x 127.0.0.1:9050 %h %p"'
