@@ -21,7 +21,13 @@ if [ `uname` = "Darwin" ]; then
     brew install git
 fi
 
+# Import settings
+stow vim
+stow zsh
+stow git
+stow bin
+stow tmux
+
 # Install Vundle for Vim
 git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/.vim/bundle/vundle
-
 vim -u ~/.vimrc.bundles +BundleInstall +qa
