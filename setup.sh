@@ -30,4 +30,4 @@ stow tmux
 
 # Install Vundle for Vim
 git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/.vim/bundle/vundle
-vim -u ~/.vimrc.bundles +BundleInstall +qa
+vim -u ~/.vimrc +BundleInstall +qa
