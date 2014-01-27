@@ -21,6 +21,13 @@ if [ `uname` = "Darwin" ]; then
     brew install git
 fi
 
+if [ `uname` = "Linux" ]; then
+    stow Xresources
+    stow xscreensaver
+    stow xinitrc
+fi
+
+
 # Import settings
 stow vim
 stow zsh
