@@ -29,7 +29,7 @@ URxvt*fading: 50
 ! URxvt*iconFile: file
 
 ! Select the fonts to be used. This is a comma separated list of font names that are
-! URxvt*font: fontlist
+URxvt*font: xft:Inconsolata:size=9
 
 ! URxvt*boldFont: fontlist
 
@@ -71,13 +71,13 @@ URxvt*url-launcher: /usr/bin/firefox
 
 
 ! Xcursor ---------------------------------------------------------------------
-Xcursor.theme: Vanilla-DMZ-AA
-Xcursor.size: 22
+Xcursor.theme: whiteglass
 
 ! Xft -------------------------------------------------------------------------
+Xft.dpi: 113
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
+Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
