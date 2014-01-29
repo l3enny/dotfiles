@@ -1,5 +1,12 @@
+### ZSH Environment Configuration
+# These commands are run *unconditionally* for every zsh shel. As a result,
+# it should be kept rather small and only limited to items which concern 
+# both interactive and non-interactive sessions (primarily path and
+# environment variables).
+
 # What do you think?
 export EDITOR=vim
+
 
 # System-dependent options
 if [ `uname` = "Darwin" ]; then
@@ -12,17 +19,6 @@ if [ `uname` = "Darwin" ]; then
     export PATH=$PATH:/sbin                    # System binaries
     export PATH=$PATH:/opt/X11/bin:/usr/texbin # TeX binaries
 else
-    # colored output for man using less
-    man() {
-        env LESS_TERMCAP_mb=$'\E[01;31m' \
-        LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-        LESS_TERMCAP_me=$'\E[0m' \
-        LESS_TERMCAP_se=$'\E[0m' \
-        LESS_TERMCAP_so=$'\E[38;5;246m' \
-        LESS_TERMCAP_ue=$'\E[0m' \
-        LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-        man "$@"
-    }
     # Include texlive binaries in path
     export PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux
 fi
