@@ -1,0 +1,15 @@
+" Increase scroll distance
+nnoremap j 2j
+nnoremap k 2k
+nnoremap h 2h
+nnoremap l 2l
+
+" Fix up the fonts
+hi CompItem font-size: 10px;
+hi CompTitle color: magenta; font-weight: bold; font-size: 10px;
+
+" nice search settings
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
