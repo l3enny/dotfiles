@@ -8,6 +8,6 @@
 export EDITOR=vim
 
 # Include texlive binaries in path
-export PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux
+export PATH=$PATH:$HOME/bin:/usr/local/texlive/2013/bin/x86_64-linux
 # Eliminate duplicates
 typeset -U PATH
