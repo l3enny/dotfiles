@@ -8,6 +8,14 @@ nnoremap l 2l
 hi CompItem font-size: 10px;
 hi CompTitle color: magenta; font-weight: bold; font-size: 10px;
 
+hi CmdLine font-size: 10px;
+hi CompTitle color: red; font-size: 10px;
+" hi CompItem color: red; font-size: 10px;
+"hi CompResult font-size: 10px;
+"hi Hint font-size: 10px;
+
+" hi CmdLine font-size: 9px; font-weight: normal; font-family:"Source Sans Pro", monospace; padding: 0 0;
+
 " nice search settings
 set incsearch
 set hlsearch
