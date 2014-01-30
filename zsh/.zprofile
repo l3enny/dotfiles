@@ -15,4 +15,4 @@ syspip(){
 }
 
 # Start X
-[[ -z $DISPLAY && $XDG_VNTR -eq 1 ]] && exec startx &> ~/.xlog
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx &> ~/.xlog
