@@ -39,9 +39,20 @@ fi
 # local tor proxy for ssh
 alias ssh-tor='ssh -o "ProxyCommand nc -X 5 -x 127.0.0.1:9050 %h %p"'
 
-# System-dependent options
-alias ls="ls --color=auto"                 # nice colored output
-# colored output for man using less
+# change default behavior of mkdir to recursively create directories
+# and be wordy about it
+alias mkdir='mkdir -p -v'
+
+# Make rm a bit more self-policing and to not glob per zsh
+alias rm='noglob rm -Iv --one-file-system'
+
+# Allow aliases to carry over into sudo
+alias sudo='sudo '
+
+# MAKE PRETTY COLORS FOR ME
+alias ls="ls --color=auto" 
+alias grep="grep --color=auto"
+
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
