@@ -31,7 +31,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
 #autoload run-help
 #HELPDIR=/usr/local/share/zsh/helpfiles
 
-if [ `uname` = "Linux" ]; then
+if [ -f "/etc/arch-release" ]; then
     # hook to search repos for missing programs
     source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
