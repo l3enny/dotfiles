@@ -44,7 +44,7 @@ alias ssh-tor='ssh -o "ProxyCommand nc -X 5 -x 127.0.0.1:9050 %h %p"'
 alias mkdir='mkdir -p -v'
 
 # Make rm a bit more self-policing and to not glob per zsh
-alias rm='noglob rm -Iv --one-file-system'
+alias rm='rm -Iv --one-file-system'
 
 # Allow aliases to carry over into sudo
 alias sudo='sudo '

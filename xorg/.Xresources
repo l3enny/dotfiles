@@ -31,6 +31,9 @@ URxvt*fading: 50
 ! Select the fonts to be used. This is a comma separated list of font names that are
 URxvt*font: xft:Source Code Pro:size=7
 
+! Set window urgent when bell is issued.
+URxvt.urgentOnBell: True
+
 ! URxvt*boldFont: fontlist
 
 ! URxvt*italicFont: fontlist
