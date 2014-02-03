@@ -1,5 +1,6 @@
 .netrwhist
-bundle/
+vim/.vim/bundle/**
 ~bundle/vundle
 *.swp
 *.jar
+*.log
