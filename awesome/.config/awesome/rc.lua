@@ -3,13 +3,20 @@ local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
+
 -- Widget and layout library
 local wibox = require("wibox")
+
 -- Theme handling library
 local beautiful = require("beautiful")
+
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+
+-- User-defined widgets
+require("volume")
+require("battery")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -189,6 +196,8 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(battery_widget)
+    right_layout:add(volume_widget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -289,7 +298,20 @@ clientkeys = awful.util.table.join(
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
-        end)
+        end),
+    awful.key({ }, "XF86AudioRaiseVolume",
+              function ()
+                 awful.util.spawn("amixer set Master 9%+")
+                 update_volume(volume_widget)
+              end),
+    awful.key({ }, "XF86AudioLowerVolume", function ()
+                 awful.util.spawn("amixer set Master 9%-")
+                 update_volume(volume_widget)
+              end),
+    awful.key({ }, "XF86AudioMute", function ()
+                 awful.util.spawn("amixer sset Master toggle")
+                 update_volume(volume_widget)
+              end)
 )
 
 -- Bind all key numbers to tags.
