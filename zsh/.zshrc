@@ -63,3 +63,6 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+# Enable completion for the password store
+# source /etc/bash_completion.d/password-store

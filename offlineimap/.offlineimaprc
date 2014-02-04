@@ -1,44 +1,87 @@
 [general]
-accounts = PersonalGmail, PublicGmail, Wetwares
 metadata = ~/.offlineimap
+accounts = PersonalGmail, PublicGmail, Wetwares
 # set equal to number of accounts to accomodate autorefresh
 maxsyncaccounts = 3
-# switch ui upon automation
+# switch ui to basic upon automation
 ui = Blinkenlights
 # let's not go on forever, shall we?
-socktimeout = 60
+socktimeout = 30
+# reduce wear on SSD
+fsync = false
 
 [mbnames]
 # Mutt-specific local mailbox settings, check and enable
-enabled = no
+enabled = yes
 filename = ~/Mutt/muttrc.mailboxes
 header = "mailboxes "
 peritem = "+%(accountname)s/%(foldername)s"
 sep = " "
 footer = "\n"
 
+[DEFAULT]
+refreshrate = 15
+waitfull = 10
+db_backend = sqlite
+
 [Account PersonalGmail]
 localrepository = Local
 remoterepository = Remote
+# folderfilter = 
+# sort_keyfunc = lambda d: (d['accountname'], d['foldername'])
+# autorefresh = %(refreshrate)s
+# quick = %(waitfull)s
+# status_backend = %(db_backend)s
 
 [Account PublicGmail]
 localrepository = Local
 remoterepository = Remote
+# folderfilter = 
+# sort_keyfunc = lambda d: (d['accountname'], d['foldername'])
+# autorefresh = %(refreshrate)s
+# quick = %(waitfull)s
+# status_backend = %(db_backend)s
 
 [Account Wetwares]
 localrepository = Local
 remoterepository = Remote
+# autorefresh = %(refreshrate)s
+# quick = %(waitfull)s
+# status_backend = %(db_backend)s
 
 [Repository Local]
 type = Maildir
-localfolders = ~/Test
+localfolders = ~/Mail
+sep = "/"
+nametrans = lambda foldername: re.sub ('^\[gmail\]', '',
+                               re.sub ('sent', 'sent_mail',
+                               re.sub ('flagged', 'starred',
+
+[Repository Wetwares]
+type = imap
+remotehost = mail.wetwar.es
+ssl = yes
+sslcacertfile = /etc/ssl/certs/wetwares.pem
+remoteuser = ben@wetwar.es
 
 [Repository PersonablGmail]
 type = gmail
 remotehost = examplehost
-remoteuser = bentyee
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = bentyee@gmail.com
+nametrans = lambda foldername: re.sub ('^\[gmail\]', 'bak',
+                               re.sub ('sent_mail', 'sent',
+                               re.sub ('starred', 'flagged',
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
 
 [Repository PublicGmail]
 type = gmail
 remotehost = examplehost
-remoteuser = l3enny
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = l3enny@gmail.com
+nametrans = lambda foldername: re.sub ('^\[gmail\]', 'bak',
+                               re.sub ('sent_mail', 'sent',
+                               re.sub ('starred', 'flagged',
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'

@@ -7,12 +7,12 @@
 
 # Pip-related settings
 export PIP_REQUIRE_VIRTUALENV=true # only install in virtualenv
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache # cahce downloads
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache # cache downloads
 
 # Function to bypass restriction on global pips
 syspip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-# Start X
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx &> ~/.xlog
+# Chain start ssh-agent and X
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && ssh-agent startx &> ~/.xlog
