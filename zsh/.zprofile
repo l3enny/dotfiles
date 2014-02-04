@@ -3,7 +3,7 @@
 # startup scripts, etc.
 
 # Turn on the ssh-agent
-eval $(ssh-agent)
+# eval $(ssh-agent)
 
 # Pip-related settings
 export PIP_REQUIRE_VIRTUALENV=true # only install in virtualenv
