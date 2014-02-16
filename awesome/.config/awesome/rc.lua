@@ -44,7 +44,6 @@ do
 end
 -- }}}
 
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init(awful.util.getdir("config") .. "/themes/default.lua")
@@ -317,7 +316,13 @@ globalkeys = awful.util.table.join(
         function ()
            awful.util.spawn("amixer sset Master toggle")
            update_volume(volume_widget)
-        end)
+        end),
+
+    -- Brightness control keys
+    awful.key({ }, "XF86MonBrightnessDown",
+        function () awful.util.spawn("xbacklight -dec 10") end),
+    awful.key({ }, "XF86MonBrightnessUp",
+        function () awful.util.spawn("xbacklight -inc 10") end)
 )
 
 

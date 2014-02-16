@@ -1,0 +1,4 @@
+# Public GMail settings
+set realname = "Ben"
+set from = l3enny@gmail.com
+set sendmail = "/usr/bin/msmtp -a public"

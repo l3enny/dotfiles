@@ -1,0 +1,4 @@
+# personal identification settings
+set realname = "Ben Yee"
+set from = ben@wetwar.es
+set sendmail = "/usr/bin/msmtp -a personal"

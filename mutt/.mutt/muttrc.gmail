@@ -1,0 +1,4 @@
+# Personal GMail settings
+set realname = "Ben Yee"
+set from = bentyee@gmail.com
+set sendmail = "/usr/bin/msmtp -a gmail"

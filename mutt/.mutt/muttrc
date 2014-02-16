@@ -1,0 +1,43 @@
+# Folder-hooks for individual account settings
+folder-hook $HOME/Mail/personal source $HOME/.mutt/muttrc.personal
+folder-hook $HOME/Mail/gmail source $HOME/.mutt/muttrc.gmail
+folder-hook $HOME/Mail/public source $HOME/.mutt/muttrc.public
+
+# Pretty colors
+source $HOME/.mutt/muttrc.colors
+
+# Change the silly default keybindings
+source $HOME/.mutt/muttrc.keybindings
+
+# Let lynx do the work of viewing stupid HTML emails
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
+alternative_order text/plain text/html
+
+# use vim for an editor and move to first blank line
+set editor="vim +/^$"
+set edit_headers = yes
+
+# Don't ask when appending mail
+set confirmappend = no
+
+# Don't ask when deleting marked messages
+set delete = yes
+
+# use inclusive encoding
+set send_charset="utf-8"
+
+# set sorting
+set sort = threads
+set sort_aux = reverse-last-date-received
+
+# do sending in the background
+set sendmail_wait = -1
+
+# Use offlineimap mailboxes, default to personal account
+source $HOME/.mutt/mailboxes
+set folder = "$HOME/Mail"
+set spoolfile = "+gmail/INBOX"
+set record = "+gmail/Sent\ Messages"
+set postponed = "+gmail/Drafts"
+set header_cache = "$HOME/.cache/mutt"

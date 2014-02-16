@@ -5,21 +5,29 @@ URxvt*foreground: #d0d0d0
 uRxvt*cursorColor: #d0d0d0
 uRxvt*colorBD: #3579a8
 uRxvt*colorUL: #4eb4fa
+! Black
 URxvt*color0: #101010
-URxvt*color1: #960050
-URxvt*color2: #66aa11
-URxvt*color3: #c47f2c
-URxvt*color4: #30309b
-URxvt*color5: #7e40a5
-URxvt*color6: #3579a8
-URxvt*color7: #9999aa
 URxvt*color8: #303030
+! Red
+URxvt*color1: #960050
 URxvt*color9: #ff0090
+! color2    green
+URxvt*color2: #66aa11
 URxvt*color10: #80ff00
+! color3    yellow
+URxvt*color3: #c47f2c
 URxvt*color11: #ffba68
+! color4    blue
+URxvt*color4: #30309b
 URxvt*color12: #5f5fee
+! color5    purple
+URxvt*color5: #7e40a5
 URxvt*color13: #bb88dd
+! color6    cyan
+URxvt*color6: #3579a8
 URxvt*color14: #4eb4fa
+! color7    white
+URxvt*color7: #9999aa
 URxvt*color15: #d0d0d0
 
 ! Fade the text by the given percentage when focus is lost; option -fade.
@@ -51,7 +59,7 @@ URxvt*internalBorder: 0
 URxvt*externalBorder: 0
 
 ! True: blink the cursor. False: do not blink the cursor [default]; option -bc.
-URxvt*cursorBlink: True
+URxvt*cursorBlink: False
 
 ! True: blank the pointer when a key is pressed or after a set number of seconds of
 URxvt*pointerBlank: True

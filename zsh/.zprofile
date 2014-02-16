@@ -14,9 +14,9 @@ syspip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-eval $(keychain --eval --quiet --timeout 15 id_rsa 462BADD5)
+eval $(keychain --eval --quiet --timeout 15 ~/.ssh/id_rsa 462BADD5)
 source ~/.keychain/$HOST-sh
 source ~/.keychain/$HOST-sh-gpg
 
 # Chain start ssh-agent and X
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && ssh-agent startx &> ~/.xlog
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx &> ~/.xlog
