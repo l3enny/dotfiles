@@ -4,3 +4,5 @@ vim/.vim/bundle/**
 *.swp
 *.jar
 *.log
+*.pyc
+__pycache__

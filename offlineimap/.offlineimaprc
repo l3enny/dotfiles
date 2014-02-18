@@ -1,44 +1,86 @@
 [general]
-accounts = PersonalGmail, PublicGmail, Wetwares
 metadata = ~/.offlineimap
-# set equal to number of accounts to accomodate autorefresh
+accounts = personal, gmail, public
 maxsyncaccounts = 3
-# switch ui upon automation
-ui = Blinkenlights
-# let's not go on forever, shall we?
-socktimeout = 60
+ui = ttyui
+pythonfile = ~/bin/offlineimap.py
+socktimeout = 30
+fsync = false
 
 [mbnames]
 # Mutt-specific local mailbox settings, check and enable
-enabled = no
-filename = ~/Mutt/muttrc.mailboxes
+enabled = yes
+filename = ~/.mutt/mailboxes
 header = "mailboxes "
 peritem = "+%(accountname)s/%(foldername)s"
 sep = " "
 footer = "\n"
 
-[Account PersonalGmail]
-localrepository = Local
-remoterepository = Remote
+[DEFAULT]
+refreshrate = 5
+waitfull = 10
+db_backend = sqlite
 
-[Account PublicGmail]
-localrepository = Local
-remoterepository = Remote
 
-[Account Wetwares]
-localrepository = Local
-remoterepository = Remote
+[Account personal]
+localrepository = personal_local
+remoterepository = personal_remote
+autorefresh = %(refreshrate)s
+quick = %(waitfull)s
+status_backend = %(db_backend)s
 
-[Repository Local]
+[Repository personal_local]
 type = Maildir
-localfolders = ~/Test
+localfolders = ~/Mail/personal
 
-[Repository PersonablGmail]
-type = gmail
-remotehost = examplehost
-remoteuser = bentyee
+[Repository personal_remote]
+type = IMAP
+remotehost = mail.wetwar.es
+ssl = yes
+sslcacertfile = /etc/ssl/certs/mail.wetwar.es.crt
+remoteuser = ben@wetwar.es
+remotepasseval = get_password("Machines/Trout_\(ben\)")
 
-[Repository PublicGmail]
-type = gmail
-remotehost = examplehost
-remoteuser = l3enny
+
+[Account gmail]
+localrepository = gmail_local
+remoterepository = gmail_remote
+autorefresh = %(refreshrate)s
+quick = %(waitfull)s
+status_backend = %(db_backend)s
+
+[Repository gmail_local]
+type = Maildir
+localfolders = ~/Mail/gmail
+nametrans = local_to_remote
+
+[Repository gmail_remote]
+type = Gmail
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = bentyee@gmail.com
+remotepasseval = get_password("App-Specific/Google_\(Indulgence,_offlineimap\)")
+nametrans = remote_to_local
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
+
+
+[Account public]
+localrepository = public_local 
+remoterepository = public_remote
+autorefresh = %(refreshrate)s
+quick = %(waitfull)s
+status_backend = %(db_backend)s
+
+[Repository public_local]
+type = Maildir
+localfolders = ~/Mail/public
+nametrans = local_to_remote
+
+[Repository public_remote]
+type = Gmail
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = l3enny@gmail.com
+remotepasseval = get_password("Web_Services/Google_\(Public\)")
+nametrans = remote_to_local
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'

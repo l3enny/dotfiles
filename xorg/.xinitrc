@@ -11,5 +11,8 @@ xset fp rehash
 # start screensaver
 /usr/bin/xscreensaver &
 
+# start synocloud
+/opt/CloudStation/bin/syno-cloud-linux
+
 # start window manager
 exec awesome

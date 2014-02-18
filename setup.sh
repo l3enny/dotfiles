@@ -1,19 +1,18 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# Software assumed to be present (beyond coreutils)
-#
-# * vim
-# * zsh
-# * git
-# * tmux
-# * OpenSSH
-# * ssh-agent
-# * wget (?)
-# * python
-# * mutt
-# * offlineimap
-# * mstmp
-# * vimperator (for firefox)
+# Detect Arch
+if [[ -f "/etc/arch-release" ]]; then
+    ARCH_PRESENT=true
+else
+    ARCH_PRESENT=false
+fi
+
+# Detect X
+if [[ `type -p X` ]]; then
+    X_PRESENT=true
+else
+    X_PRESENT=false
+fi
 
 # Import settings
 stow vim
@@ -27,7 +26,7 @@ stow vimperator
 stow msmtp
 
 # Test for presence of X
-if [[ `type -p X` ]]
+if $X_PRESENT; then
     stow xorg
 fi
 
