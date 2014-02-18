@@ -2,7 +2,7 @@
 metadata = ~/.offlineimap
 accounts = personal, gmail, public
 maxsyncaccounts = 3
-ui = BlinkenLights
+ui = ttyui
 pythonfile = ~/bin/offlineimap.py
 socktimeout = 30
 fsync = false

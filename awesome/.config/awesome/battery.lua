@@ -37,7 +37,7 @@ function update_battery(adapter)
    else
       dir = "="
    end
-   local display = spacer..dir..spacer..battery.."%"..spacer
+   local display = spacer..dir..spacer..battery.."%"
    battery_widget:set_markup(display)
 end
 

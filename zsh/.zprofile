@@ -2,9 +2,6 @@
 # Commands that should run at the login shell (once). Session-wide aliases,
 # startup scripts, etc.
 
-# Turn on the ssh-agent
-# eval $(ssh-agent)
-
 # Pip-related settings
 export PIP_REQUIRE_VIRTUALENV=true # only install in virtualenv
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache # cache downloads
@@ -14,9 +11,13 @@ syspip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
+# Start GPG and SSH keychain
 eval $(keychain --eval --quiet --timeout 15 ~/.ssh/id_rsa 462BADD5)
 source ~/.keychain/$HOST-sh
 source ~/.keychain/$HOST-sh-gpg
 
-# Chain start ssh-agent and X
+# Include texlive binaries in path
+export PATH=$PATH:$HOME/bin:/usr/local/texlive/2013/bin/x86_64-linux
+
+# Start X and route errors to specified log file
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx &> ~/.xlog

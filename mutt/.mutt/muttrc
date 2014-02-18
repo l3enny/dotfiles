@@ -24,6 +24,10 @@ set confirmappend = no
 # Don't ask when deleting marked messages
 set delete = yes
 
+# make wrapping behave well
+set smart_wrap = yes
+set markers = no
+
 # use inclusive encoding
 set send_charset="utf-8"
 

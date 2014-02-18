@@ -18,7 +18,6 @@ local menubar = require("menubar")
 require("volume")
 require("battery")
 
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -49,7 +48,7 @@ end
 beautiful.init(awful.util.getdir("config") .. "/themes/default.lua")
 
 -- Program defaults
-terminal = "urxvt"
+terminal = "st"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
