@@ -7,6 +7,20 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+" Make for seamless transitions between vim and tmux panes
+Bundle 'christoomey/vim-tmux-navigator'
+
+" Neato status bar
+Bundle 'Lokaltog/powerline'
+
+" Syntax
+Bundle 'tpope/vim-git'
+
+" Color
+Bundle 'molokai'
+
+colorscheme molokai
+
 " Turn on line numbers
 set number
 
@@ -40,15 +54,3 @@ nnoremap <C-l> <C-w>l
 " Set preference for where splits occur
 set splitbelow
 set splitright
-
-" Make for seamless transitions between vim and tmux panes
-Bundle 'christoomey/vim-tmux-navigator'
-
-" Neato status bar
-Bundle 'Lokaltog/powerline'
-
-" Syntax
-Bundle 'tpope/vim-git'
-
-" Color
-Bundle 'molokai'

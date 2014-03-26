@@ -48,7 +48,7 @@ end
 beautiful.init(awful.util.getdir("config") .. "/themes/default.lua")
 
 -- Program defaults
-terminal = "st"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -98,16 +98,21 @@ myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
-   { "lock", "xscreensaver-command -lock"},
-   { "reboot", "reboot" },
    { "quit", awesome.quit }
 }
 
+mysystemmenu = {
+   { "lock", "xscreensaver-command -lock"},
+   { "reboot", "reboot" },
+   { "shutdown", "shutdown now"}
+}
 
 mymainmenu = awful.menu({ items =
                 { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                  { "open terminal", terminal } }
+                  { "system", mysystemmenu} }
              })
+
+
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })

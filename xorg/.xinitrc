@@ -16,3 +16,4 @@ xset fp rehash
 
 # start window manager
 exec awesome
+#exec i3

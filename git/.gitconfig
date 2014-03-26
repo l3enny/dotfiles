@@ -1,3 +1,5 @@
 [user]
 	email = ben@wetwar.es
 	name = Ben Yee
+[push]
+	default = simple
