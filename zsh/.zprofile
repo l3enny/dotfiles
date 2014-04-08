@@ -12,7 +12,7 @@ syspip(){
 }
 
 # Start GPG and SSH keychain
-eval $(keychain --eval --quiet --timeout 15 ~/.ssh/id_rsa 462BADD5)
+eval `keychain --eval --timeout 15 --quiet --inherit local id_rsa 462BADD5`
 source ~/.keychain/$HOST-sh
 source ~/.keychain/$HOST-sh-gpg
 

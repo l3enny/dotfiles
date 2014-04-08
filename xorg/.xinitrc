@@ -2,8 +2,8 @@
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-# make sure to merge the Xresources settings
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+# Import Xresources settings
+[[ -f ~/.Xresources ]] && xrdb ~/.Xresources
 
 # calibrate the monitor colors
 [[ -f ~/.colorprofiles/default.icc ]] && xcalib ~/.colorprofiles/default.icc
@@ -16,4 +16,3 @@ xset fp rehash
 
 # start window manager
 exec awesome
-#exec i3

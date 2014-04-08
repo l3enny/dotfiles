@@ -18,6 +18,9 @@ local menubar = require("menubar")
 require("volume")
 require("battery")
 
+-- awful.completion.bashcomp_load("/etc/bash_completion.d/password-store")
+awful.completion.bashcomp_load()
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -291,9 +294,20 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n",
         awful.client.restore),
 
+
     -- Prompt
     awful.key({ modkey }, "r",
-        function () mypromptbox[mouse.screen]:run() end),
+        function ()
+            mypromptbox[mouse.screen]:run()
+        end),
+
+    --awful.key({ modkey }, "r",
+    --    function ()
+    --        awful.prompt.run({ prompt = "Run: " },
+    --        mypromptbox[mouse.screen].widget,
+    --        awful.util.spawn, awful.completion.shell,
+    --        awful.util.getdir("cache") .. "/history")
+    --    end),
     awful.key({ modkey }, "x",
         function ()
             awful.prompt.run({ prompt = "Run Lua code: " },

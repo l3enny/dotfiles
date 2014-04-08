@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# API request format:
+# https://api.linode.com/?api_key=abc123&api_action=test.echo&foo=bar
+
+API_KEY=
+DOMAIN_ID=500880
+RESOURCE_ID=3689032
+ACTION=domain.resource.update
+VARS="DomainID=$DOMAIN_ID&ResourceID=$RESOURCE_ID&Target=[remote_addr]"
+
+wget -qO- "https://api.linode.com/?api_key=$API_KEY&api_action=$ACTION&$VARS" &> /dev/null
