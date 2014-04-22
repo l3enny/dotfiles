@@ -39,7 +39,7 @@ remotehost = mail.wetwar.es
 ssl = yes
 sslcacertfile = /etc/ssl/certs/mail.wetwar.es.crt
 remoteuser = ben@wetwar.es
-remotepasseval = get_password("Machines/Trout_\(ben\)")
+remotepasseval = get_password("machines/Trout_\(ben\)")
 
 
 [Account gmail]
@@ -59,7 +59,7 @@ type = Gmail
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 remoteuser = bentyee@gmail.com
-remotepasseval = get_password("App-Specific/Google_\(Indulgence,_offlineimap\)")
+remotepasseval = get_password("apps/indulgence_google_personal")
 nametrans = remote_to_local
 folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
 
@@ -81,6 +81,6 @@ type = Gmail
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 remoteuser = l3enny@gmail.com
-remotepasseval = get_password("Web_Services/Google_\(Public\)")
+remotepasseval = get_password("apps/indulgence_google_public")
 nametrans = remote_to_local
 folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
