@@ -39,7 +39,7 @@ remotehost = mail.wetwar.es
 ssl = yes
 sslcacertfile = /etc/ssl/certs/mail.wetwar.es.crt
 remoteuser = ben@wetwar.es
-remotepasseval = get_password("machines/Trout_\(ben\)")
+remotepasseval = get_password("machines/ben@trout")
 
 
 [Account gmail]

@@ -11,10 +11,12 @@ syspip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-# Start GPG and SSH keychain
-eval `keychain --eval --timeout 15 --quiet --inherit local id_rsa 462BADD5`
-source ~/.keychain/$HOST-sh
-source ~/.keychain/$HOST-sh-gpg
+# Start GPG and SSH agents via keychain
+eval $(keychain --eval --quiet id_rsa AF5966DF)
+#eval $(keychain --eval id_rsa)
+
+#source ~/.keychain/$HOST-sh
+#source ~/.keychain/$HOST-sh-gpg
 
 # Include texlive binaries in path
 export PATH=$PATH:$HOME/bin:/usr/local/texlive/2013/bin/x86_64-linux
